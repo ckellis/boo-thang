@@ -1,0 +1,239 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Bob the Boo</title>
+
+<style type="text/css"> 
+
+#body 
+{  
+ font:12pt verdana,arial,sans-serif;
+ background:#565656;
+ background-image:url(images/WallpaperDark.jpg);
+ zoom: 90%;
+}
+
+#content
+{
+	width:1300px;
+	margin-left:23%;
+}
+
+#container
+{	
+	background-image: url(images/ParlorDark.jpg);
+ 	background-repeat:no-repeat;
+ 	background-position:center;
+	width:1024px;
+	height:724px;
+	margin-top:3em;
+	float:left;
+	-moz-box-shadow: 0 10px 30px 5px #999;
+    -webkit-box-shadow: 0 10px 30px 5px #999;
+    box-shadow: 0 10px 30px 5px #000;
+}
+
+#switchContainer
+{
+	width:250px;
+	height:724px;
+	float:right;
+	padding-top:15%;
+}
+	
+
+#switchOn
+{
+	position:absolute;
+	z-index: 1;
+}
+ 
+#switchOff
+{
+	position:absolute;
+	z-index: 2;
+} 
+ 
+#obj 
+{
+  width:100px; 
+  position:fixed; 
+  top:275px;
+  padding-left:4.5em;
+} 
+
+#interact
+{
+	width:1024px;
+	height:auto;
+	margin-left:23%;
+	padding-top:2em;
+	text-align:center;
+	float:left;
+}
+
+#toggle
+{
+	margin-left:6em;
+}
+
+
+#main
+{
+	position:absolute;
+	z-index:3;
+}
+
+#left
+{
+ 	position:absolute;
+	display:none;
+	z-index:4;
+}
+
+#right
+{
+ 	position:absolute;
+	display:none;
+	z-index:5;
+}
+
+#tickle1
+{
+ 	position:absolute;
+	display:none;
+	z-index:6;
+}
+
+#under
+{
+ 	position:absolute;
+	display:none;
+	z-index:7;
+}
+
+#left2
+{
+ 	position:absolute;
+	display:none;
+	z-index:8;
+}
+
+#right2
+{
+ 	position:absolute;
+	display:none;
+	z-index:9;
+}
+
+#tickle2
+{
+ 	position:absolute;
+	display:none;
+	z-index:10;
+}
+
+#scare1
+{
+ 	position:absolute;
+	display:none;
+	z-index:11;
+}
+
+#scare2
+{
+ 	position:absolute;
+	display:none;
+	z-index:12;
+}
+
+a  
+{
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  position:fixed;
+}
+
+a:hover 
+{
+  opacity:0;
+}
+
+#sound
+{
+	display:none;
+}
+
+#boo
+{
+	display:none;
+	z-index:0;
+	position:absolute;
+}
+
+</style>
+ 
+</head>
+ 
+<body id="body" onload="initial()">
+
+<div id="content">
+
+	<a href="#">
+		<object id="obj">
+ 		<img id="main" src="images/Boo.png" />
+        <img id="under" src="images/KingBoo.png"/>
+        <img id="right" src="images/BooRight.png" />
+        <img id="left" src="images/BooLeft.png" />
+        <img id="right2" src="images/KingBooRight.png" />
+        <img id="left2" src="images/KingBooLeft.png" >
+        <img id="tickle1" src="images/BooLaugh.png" />
+        <img id="tickle2" src="images/KingBooLaugh.png" />
+		</object>
+	</a>
+
+<div id="switchContainer">
+
+<button id="toggle" onclick="soundToggle()" >Music On/Off </button>
+
+<div id="switchOff">
+	<img id="off" src="images/Switch2Off.png" usemap="#turnOn" border="0" alt="light switch" />
+    <map id="turnOn" name="turnOn">
+    <area shape="rect" coords="112,154,139,202" onclick="lights()" href="#"/></map>
+</div>
+   
+<div id="switchOn"> 
+    <img id="on" src="images/Switch2On.png" usemap="#turnOff" border="0" alt="light switch" />
+    <map id="turnOff" name="turnOff">
+    <area shape="rect" coords="112,154,139,202" onclick="lightsOff()" href="#"/></map>    
+</div>
+</div>
+
+<div id="container">
+<img id="scare1" src="images/Scare.png" />
+<img id="scare2" src="images/Scare2.png" />
+<img id="boo" src="images/Hello.png" />
+</div>
+
+<audio id="sound" src="sound/Big Boo's Haunt.mp3" preload="auto" loop autoplay></audio>
+<audio id="scream" src="sound/Scare.mp3" preload="auto" ></audio>
+<audio id="laugh" src="sound/Laugh.mp3" preload="auto" ></audio>
+<audio id="click" src="sound/Switch.mp3" preload="auto" ></audio>
+
+</div>
+
+   
+<div id="interact">
+  		<button id="forward" onclick="forward()" >forward</button>
+  		<button id="backward" onclick="backward()" >backward</button>
+  		<button id="transform" onclick="transform('under')" >transform</button>
+  		<button id="scare" onclick="scare()" >scare</button>
+        <button id="tickle" onclick="tickle()" >tickle</button>
+</div>
+ 
+<script src="js/Boo.js"></script>
+
+</body>
+</html>
