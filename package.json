@@ -2,7 +2,8 @@
   "name" : "boothang",
   "version" : "1.0.0",
   "dependencies" : {
-    "express" : "*"
+    "express" : "*",
+    "compression": "*"
   },
    "engines": {
         "node": "0.12.7",

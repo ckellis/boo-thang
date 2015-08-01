@@ -1,9 +1,10 @@
 var express = require('express');
+var compression = require('compression')
 var app = express();
 
-process.env.PWD = process.cwd()
+process.env.PWD = process.cwd();
 
-app.use(express.compress());
+app.use(compression());
 
 app.use(express.static(process.env.PWD + '/public'));
 
